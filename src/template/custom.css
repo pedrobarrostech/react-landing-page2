@@ -1,0 +1,20 @@
+body {
+    font-family: 'Lora', serif;
+}
+
+h1, h2, h3, h4, h5, h6, h7 { 
+    font-family: 'Teko', sans-serif;
+}
+
+.markedAsDone {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.tableActions {
+    width: 105px;
+}
+
+.todoForm {
+    padding-bottom: 60px;
+}
