@@ -14,10 +14,16 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx'],
         alias: {
-            modules: __dirname + '/node_modules'
+            modules: __dirname + '/node_modules',
+            jquery: 'modules/jquery/dist/jquery.min.js',
         }
     },
     plugins: [ 
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
         new ExtractTextPlugin('app.css')
     ],
     module: {
@@ -30,11 +36,18 @@ module.exports = {
                 plugins: ['transform-object-rest-spread']
             }
         }, {
-            test: /\.css$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-        }, {
-            test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
-            loader: 'file'
-        }]
+                test: /\.(png|jpg|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=100000'
+            },
+            {
+                test: /\.scss$/,
+                loaders: ['style-loader', 'css-loader?importLoaders=1', 'sass-loader'],
+                exclude: ['node_modules']
+            },
+            {
+                test: /\.css$/,
+                loaders: ['style-loader', 'css-loader?importLoaders=1'],
+                exclude: ['node_modules']
+            },]
     }
 }
