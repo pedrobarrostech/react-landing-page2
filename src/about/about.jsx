@@ -5,16 +5,13 @@ export default props => (
     <div id='index-banner' className='parallax-container'>
       <div className='section no-pad-bot main-banner'>
         <div className='container'>
-          <br/><br/><br/><br/>
-          <h1 className='header center red-text text-darken-3'>Tatueria</h1>
           <div className='row center'>
-            <img src={ require('../template/images/logo.png') } width="400" />
-            <h5 className='header col s12 light'>Tradicional <span className="red-text text-darken-3">&</span> Oriental</h5>
+            <img className='main-logo' src={ require('../template/images/artwork.png') } width="400" />
           </div>
           <div className='row center'>
             <a href='http://materializecss.com/getting-started.html' id='download-button' className='btn-large waves-effect waves-light red darken-3'>Marque um horário</a>
           </div>
-          <br/><br/>
+          <br/><br/><br/><br/>
 
         </div>
       </div>
@@ -37,7 +34,7 @@ export default props => (
 
 
     <div className='container'>
-      <div className='section'>
+      <div className='section services'>
 
         <div className='col s12 center'>
             <h2>Serviços</h2>

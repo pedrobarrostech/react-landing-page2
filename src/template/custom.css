@@ -73,9 +73,17 @@ nav {
  * Made By MaterializeCSS.com
  */
 
+ .services {
+   padding-bottom:60px;
+ }
+
 nav ul a,
 nav .brand-logo {
   color: #ccc;
+}
+
+#logo-container > img {
+  margin-top:17px;
 }
 
 nav ul li:hover{
